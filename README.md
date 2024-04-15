@@ -74,8 +74,33 @@ Instruments are present in the following files
 ![image](https://github.com/GitBps/ComputeHeat/assets/47725750/ff9aaf44-c0b3-433b-bbb3-e5ca6b292538)
 
 
+## Diagnostics and Analytics of thermal material 
 
+|Collection Scripts |
+|------------------------------------------------------------------------------------------------------------------------------------|
+|sudo trace-cmd report --cpu 0 /root/trace_event_logging_iter3.dat > CPU0.txt|
+|sudo trace-cmd report --cpu 1 /root/trace_event_logging_iter3.dat > CPU1.txt|
+|sudo trace-cmd report --cpu 2 /root/trace_event_logging_iter3.dat > CPU2.txt|
+|sudo trace-cmd report --cpu 3 /root/trace_event_logging_iter3.dat > CPU3.txt|
+|sudo trace-cmd report --cpu 4 /root/trace_event_logging_iter3.dat > CPU4.txt|
+|sudo trace-cmd report --cpu 5 /root/trace_event_logging_iter3.dat > CPU5.txt|
+|sudo trace-cmd report --cpu 6 /root/trace_event_logging_iter3.dat > CPU6.txt|
+|sudo trace-cmd report --cpu 7 /root/trace_event_logging_iter3.dat > CPU7.txt|
+|cat CPU0.txt | grep -iP ".*000.*sched_stat_runtime.*stress|.*000.*Balv" CPU0.txt > FilteredCPU00.txt|
+|cat CPU1.txt | grep -iP ".*001.*sched_stat_runtime.*stress|.*001.*Balv" CPU1.txt > FilteredCPU01.txt|
+|cat CPU2.txt | grep -iP ".*002.*sched_stat_runtime.*stress|.*002.*Balv" CPU2.txt > FilteredCPU02.txt|
+|cat CPU3.txt | grep -iP ".*003.*sched_stat_runtime.*stress|.*003.*Balv" CPU3.txt > FilteredCPU03.txt|
+|cat CPU4.txt | grep -iP ".*004.*sched_stat_runtime.*stress|.*004.*Balv" CPU4.txt > FilteredCPU04.txt|
+|cat CPU5.txt | grep -iP ".*005.*sched_stat_runtime.*stress|.*005.*Balv" CPU5.txt > FilteredCPU05.txt|
+|cat CPU6.txt | grep -iP ".*006.*sched_stat_runtime.*stress|.*006.*Balv" CPU6.txt > FilteredCPU06.txt|
+|cat CPU7.txt | grep -iP ".*007.*sched_stat_runtime.*stress|.*007.*Balv" CPU7.txt > FilteredCPU07.txt|
+|------------------------------------------------------------------------------------------------------------------------------------|
 
+Now to generate Graphs and Quadratic Fit for all the processes you can use the following commands
+
+python3 runtimeAnalyzer.py FilteredCPU0 <pid> 1
+
+python3 ../runtimeAnalyzer.py FilteredCPU0 <pid> 1
 
 
 
