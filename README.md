@@ -44,7 +44,6 @@ This will do a 35 instances of matrix multiplications and enough to load the 12 
 
 Sample output shall provide following columns 
 
-  |------------------------------------------------------------------------------------------------------------------------------------|
   |stress-ng: info:  [23205] setting to a 15 mins, 0 secs run per stressor                                                             |
   |------------------------------------------------------------------------------------------------------------------------------------|
   |stress-ng: info:  [23205] dispatching hogs: 35 matrix                                                                               |
@@ -59,6 +58,21 @@ Sample output shall provide following columns
   |stress-ng: info:  [23206] therm:  3.25  3.00  3.75  5.71  1.57  0.87   34.05  20.00  48.05  91.05  91.00  47.05  61.05  45.00  91.00|
   |------------------------------------------------------------------------------------------------------------------------------------|
   
+
+## Kernel Code Changes for Diagnostics 
+
+In the linux kernel 6.6.8, we modified and put diagnostics to read the temperature from the hardwrae insitu. 
+
+This is then later plotted using the python analyzers for this research work. 
+
+Ideally it should be a part of the temperature schedulers to control internally itself. 
+
+![image](https://github.com/GitBps/ComputeHeat/assets/47725750/c5bcab0e-e218-411b-b826-1c9aed6d9471)
+
+Instruments are present in the following files 
+
+![image](https://github.com/GitBps/ComputeHeat/assets/47725750/ff9aaf44-c0b3-433b-bbb3-e5ca6b292538)
+
 
 
 
