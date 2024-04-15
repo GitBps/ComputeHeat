@@ -102,6 +102,9 @@ python3 runtimeAnalyzer.py FilteredCPU0 <pid> 1
 
 python3 ../runtimeAnalyzer.py FilteredCPU0 <pid> 1
 
+Sample Output would look like this => 
+
+![image](https://github.com/GitBps/ComputeHeat/assets/47725750/0fee617b-d1a6-4867-aba4-e30fae14822c)
 
 
 
