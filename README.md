@@ -36,7 +36,7 @@ Sample output shall look like this:
 ![image](https://github.com/GitBps/ComputeHeat/assets/47725750/c3b5640f-7fdc-4727-9534-3682e52a127f)
 
 
-## Setup the S-TUI now for visually monitoring the Temperature, Per core frequency, Fanspeed, Wattage and CPU Utilization per core 
+## Setup the Stressing utility for simulating the heat and temperature due to heat. 
 
 sudo ./ThermalAnalysis/tools/stress-ng --matrix 35  --timeout 15m --thermalstat 1
 
